@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="resulttest" namespace="/" extends="struts-default">
+        <!--转发-->
+        <action name="DemoResult1Action" class="com.qwm.struts2_2.a_result.DemoResult1Action">
+            <result name="success" type="dispatcher">/hello.jsp</result>
+        </action>
+        <!--重定向-->
+        <action name="DemoResult2Action" class="com.qwm.struts2_2.a_result.DemoResult2Action">
+            <result name="success" type="redirect">/hello.jsp</result>
+        </action>
+        <!-- 转发到Action -->
+        <action name="DemoResult3Action" class="com.qwm.struts2_2.a_result.DemoResult3Action">
+            <result name="success" type="chain">
+                <!-- 转发到的action的名字 -->
+                <param name="actionName">DemoResult1Action</param>
+                <!-- 转发到的action所在的命名空间 -->
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <!-- 重定向到Action -->
+        <action name="DemoResult4Action" class="com.qwm.struts2_2.a_result.DemoResult4Action">
+            <result name="success" type="redirectAction">
+                <!-- 重定向到的action的名字 -->
+                <param name="actionName">DemoResult1Action</param>
+                <!-- 重定向到的action所在的命名空间 -->
+                <param name="namespace">/</param>
+            </result>
+        </action>
+    </package>
+</struts>

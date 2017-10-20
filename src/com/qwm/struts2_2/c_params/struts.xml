@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="params" namespace="/" extends="struts-default">
+
+        <!--参数获取方式一 属性驱动获得参数-->
+        <action name="DemoParams1Action" class="com.qwm.struts2_2.c_params.DemoParams1Action">
+            <result name="success">/message.jsp</result>
+        </action>
+
+        <!--参数获取方式二 对象驱动获得参数-->
+        <action name="DemoParams2Action" class="com.qwm.struts2_2.c_params.DemoParams2Action">
+            <result name="success">/message.jsp</result>
+        </action>
+
+        <!--参数获取方式三 模型驱动获得参数-->
+        <action name="DemoParams3Action" class="com.qwm.struts2_2.c_params.DemoParams3Action">
+            <result name="success">/message.jsp</result>
+        </action>
+
+        <!--集合获取参数测试-->
+        <action name="DemoParams4Action" class="com.qwm.struts2_2.c_params.DemoParams4Action">
+            <result name="success">/message2.jsp</result>
+        </action>
+    </package>
+</struts>
